@@ -27,6 +27,7 @@ const validateCredentials = async (req, res) => {
   };
 
   const Signup = async (req, res) => {
+    console.log("Datos recibidos:", req.body);
     const datos = req.body;
     const hashedPassword = CryptoJS.SHA256(datos.password, process.env.CODE_SECRET_DATA).toString();
     console.log("Contraseña",hashedPassword);
