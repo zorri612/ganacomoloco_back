@@ -12,7 +12,7 @@ const validateCredentials = async (req, res) => {
         if (existingCode) {
             // Verificar si el código ya ha sido usado por otro usuario
             if (existingCode.status !== 'libre') {
-                return res.status(400).json({ status: "Error", message: "¡Código ya registrado!" });
+                return res.status(400).json({ status: "Error", message: "Ups, al parecer este código ya ha sido usado." });
             }
 
             // Obtener la fecha y hora actual en formato Bogotá
@@ -44,7 +44,7 @@ const validateCredentials = async (req, res) => {
 
         } else {
             // Si el código no existe
-            return res.status(404).json({ status: "Error", message: "Código no válido" });
+            return res.status(404).json({ status: "Error", message: "Código no válido o inexistente" });
         }
     } catch (error) {
         console.error('Error fetching code:', error);
