@@ -37,7 +37,7 @@ const validateCredentials = async (req, res) => {
             if (prizeValue = 0) {
                 message = "No ganaste";
             } else {
-                message = `¡Ganaste $ ${prizeValue} en Nequi!`;
+                message = `¡Ganaste  ${prizeValue} en Nequi!`;
             }
 
             return res.status(200).json({ status: "Success", message, prizeValue });
