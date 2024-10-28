@@ -34,10 +34,10 @@ const validateCredentials = async (req, res) => {
             const prizeValue = existingCode.value;
             let message = "";
 
-            if (prizeValue === 0) {
+            if (prizeValue = 0) {
                 message = "No ganaste";
             } else {
-                message = `¡Ganaste '$'${prizeValue} en Nequi!`;
+                message = `¡Ganaste $ ${prizeValue} en Nequi!`;
             }
 
             return res.status(200).json({ status: "Success", message, prizeValue });
